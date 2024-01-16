@@ -5,6 +5,16 @@ public class Main {
         forEnumDay();
     }
     public static void forEnumDay(){
+        Week day = new Week();
+        System.out.println(day.selectDay(Day.MONDAY));
+        System.out.println(day.selectDay(Day.TUESDAY));
+        System.out.println(day.selectDay(Day.WEDNESDAY));
+        System.out.println(day.selectDay(Day.THURSDAY));
+        System.out.println(day.selectDay(Day.FRIDAY));
+        System.out.println(day.selectDay(Day.SATURDAY));
+        System.out.println(day.selectDay(Day.SUNDAY));
+
+        System.out.println("\n");
         Week firstDay = new Week(Day.MONDAY);
         firstDay.chooseDay();
         Week secondDay = new Week(Day.TUESDAY);

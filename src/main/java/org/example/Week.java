@@ -10,6 +10,27 @@ public class Week {
         this.day = day;
     }
 
+    public String selectDay(Day day){
+        switch (day){
+            case MONDAY:
+                return "MONDAY";
+            case TUESDAY:
+                return "TUESDAY";
+            case WEDNESDAY:
+                return "WEDNESDAY";
+            case THURSDAY:
+                return "THURSDAY";
+            case FRIDAY:
+                return "FRIDAY";
+            case SATURDAY:
+                return "SATURDAY";
+            case SUNDAY:
+                return "SUNDAY";
+            default:
+                return"There is no such day";
+        }
+    }
+
     public void chooseDay(){
         switch (day){
             case MONDAY:
