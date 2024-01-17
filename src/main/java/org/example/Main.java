@@ -2,6 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
+<<<<<<< HEAD
         forEnumDay();
     }
     public static void forEnumDay(){
@@ -29,5 +30,12 @@ public class Main {
         sixthDay.chooseDay();
         Week seventhDay = new Week(Day.SUNDAY);
         seventhDay.chooseDay();
+=======
+        forTriangle();
+    }
+    public static void forTriangle(){
+        Triangle triangle = new Triangle(3.0, 5.0);
+        System.out.println(triangle.toString());;
+>>>>>>> 906d7028d158e42516f889cd3adfe7ec5640667c
     }
 }
