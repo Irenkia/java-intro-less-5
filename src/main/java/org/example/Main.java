@@ -3,6 +3,9 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 <<<<<<< HEAD
+        forMessage();
+=======
+<<<<<<< HEAD
         forEnumDay();
     }
     public static void forEnumDay(){
@@ -37,5 +40,13 @@ public class Main {
         Triangle triangle = new Triangle(3.0, 5.0);
         System.out.println(triangle.toString());;
 >>>>>>> 906d7028d158e42516f889cd3adfe7ec5640667c
+>>>>>>> 65f7b983761de190c1356afde72bb127d9d69f52
     }
+    public static void forMessage(){
+        WindowMessage winMes = new WindowMessage();
+        System.out.println(winMes.getMessage());
+        ConsoleMessage conMes = new ConsoleMessage();
+        System.out.println(conMes.getMessage());
+    }
+
 }
