@@ -1,32 +1,39 @@
 package org.example;
 
 public class BillCalculator {
-    private double invoiceAmount;
-    private float accountServiceFee = 0.3f;
-    private double discount = 1.5;
-    private short packagingFee = 5;
+    private  double bill;
+    private  float payOfServices;
+    private double discount;
+    private short packagingFee;
 
     public BillCalculator() {
     }
 
-    public BillCalculator(double invoiceAmount) {
-        this.invoiceAmount = invoiceAmount;
+    public BillCalculator(double bill) {
+        this.bill = bill;
     }
 
-    public double getInvoiceAmount() {
-        return invoiceAmount;
+    public BillCalculator(double bill, float payOfServices, double discount, short packagingFee) {
+        this.bill = bill;
+        this.payOfServices = payOfServices;
+        this.discount = discount;
+        this.packagingFee = packagingFee;
     }
 
-    public void setInvoiceAmount(double invoiceAmount) {
-        this.invoiceAmount = invoiceAmount;
+    public double getBill() {
+        return bill;
     }
 
-    public float getAccountServiceFee() {
-        return accountServiceFee;
+    public void setBill(double bill) {
+        this.bill = bill;
     }
 
-    public void setAccountServiceFee(float accountServiceFee) {
-        this.accountServiceFee = accountServiceFee;
+    public float getPayOfServices() {
+        return payOfServices;
+    }
+
+    public void setPayOfServices(float payOfServices) {
+        this.payOfServices = payOfServices;
     }
 
     public double getDiscount() {
@@ -45,24 +52,28 @@ public class BillCalculator {
         this.packagingFee = packagingFee;
     }
 
-    public double calculateInvoiceAmount(double invoiceAmount, float accountServiceFee){
-        double resultAccountServiceFee = ((double) accountServiceFee / 100) * invoiceAmount;
-        double resultCalculate = invoiceAmount + resultAccountServiceFee;
-        double roundedResult = Math.round(resultCalculate * 100.0) / 100.0;
+    public double calculateBill(double bill, float payOfServices){
+        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultCalculate = bill + resultPayOfServices;
+        double roundedResult = roundResult(resultCalculate);
         return roundedResult;
     }
 
-    public double calculateInvoiceAmount(double invoiceAmount, float accountServiceFee, double discount){
-        double resultAccountServiceFee = ((double)accountServiceFee / 100) * invoiceAmount;
-        double resultDiscount = (discount / 100) * invoiceAmount;
-        double resultCalculate = (invoiceAmount - resultDiscount) + resultAccountServiceFee;
-        double roundedResult = Math.round(resultCalculate * 100.0) / 100.0;
+    public double calculateBill(double bill, float payOfServices, double discount){
+        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultDiscount = (discount / 100) * bill;
+        double resultCalculate = (bill - resultDiscount) + resultPayOfServices;
+        double roundedResult = roundResult(resultCalculate);
         return roundedResult;
     }
-    public double calculateInvoiceAmount(double invoiceAmount, float accountServiceFee, short packagingFee){
-        double resultAccountServiceFee = (accountServiceFee / 100) * invoiceAmount;
-        double resultCalculate = invoiceAmount + resultAccountServiceFee + (double)packagingFee;
-        double roundedResult = Math.round(resultCalculate * 100.0) / 100.0;
+    public double calculateBill(double bill, float payOfServices, short packagingFee){
+        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultCalculate = bill + resultPayOfServices + (double)packagingFee;
+        double roundedResult = roundResult(resultCalculate);
         return roundedResult;
+    }
+
+    public  double roundResult(double result){
+        return Math.round(result * 100.0) / 100.0;
     }
 }
