@@ -53,24 +53,28 @@ public class BillCalculator {
     }
 
     public double calculateBill(double bill, float payOfServices){
-        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultPayOfServices = payServices(bill, payOfServices);
         double resultCalculate = bill + resultPayOfServices;
         double roundedResult = roundResult(resultCalculate);
         return roundedResult;
     }
 
     public double calculateBill(double bill, float payOfServices, double discount){
-        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultPayOfServices = payServices(bill, payOfServices);
         double resultDiscount = (discount / 100) * bill;
         double resultCalculate = (bill - resultDiscount) + resultPayOfServices;
         double roundedResult = roundResult(resultCalculate);
         return roundedResult;
     }
     public double calculateBill(double bill, float payOfServices, short packagingFee){
-        double resultPayOfServices = (payOfServices / 100) * bill;
+        double resultPayOfServices = payServices(bill, payOfServices);
         double resultCalculate = bill + resultPayOfServices + (double)packagingFee;
         double roundedResult = roundResult(resultCalculate);
         return roundedResult;
+    }
+
+    public double payServices(double bill, float payOfServices){
+        return (payOfServices / 100) * bill;
     }
 
     public  double roundResult(double result){
