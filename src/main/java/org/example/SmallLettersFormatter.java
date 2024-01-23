@@ -1,8 +1,9 @@
 package org.example;
 
-public class SmallLettersClass implements TextFormatter{
+public class SmallLettersFormatter implements TextFormatter{
     @Override
     public String formatText(String text) {
+
         return text.toLowerCase();
     }
 }

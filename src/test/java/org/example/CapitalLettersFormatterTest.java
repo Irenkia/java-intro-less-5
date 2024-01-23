@@ -3,11 +3,11 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CapitalLettersClassTest {
+public class CapitalLettersFormatterTest {
     @Test
     public void shouldCapitalLettersString() {
         //given
-        CapitalLettersClass capitalLetters = new CapitalLettersClass();
+        CapitalLettersFormatter capitalLetters = new CapitalLettersFormatter();
         String str = "Hello world!";
 
         //when

@@ -5,8 +5,8 @@ public class Main {
         forTextFormatter();
     }
     public static void forTextFormatter(){
-        CapitalLettersClass capitalLetters = new CapitalLettersClass();
-        SmallLettersClass smallLetters = new SmallLettersClass();
+        CapitalLettersFormatter capitalLetters = new CapitalLettersFormatter();
+        SmallLettersFormatter smallLetters = new SmallLettersFormatter();
         String str = "Hello world!";
         System.out.println("Our String : \"" + str + "\"");
         System.out.println("let's make it all in capital letters : \"" + capitalLetters.formatText(str) + "\"");

@@ -3,11 +3,11 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SmallLetterClassTest {
+public class SmallLettersFormatterTest {
     @Test
     public void shouldSmallLettersString() {
         //given
-        SmallLettersClass smallLetters = new SmallLettersClass();
+        SmallLettersFormatter smallLetters = new SmallLettersFormatter();
         String str = "Hello world!";
 
         //when
@@ -16,4 +16,5 @@ public class SmallLetterClassTest {
         //then
         Assertions.assertEquals("hello world!", result);
     }
+
 }
