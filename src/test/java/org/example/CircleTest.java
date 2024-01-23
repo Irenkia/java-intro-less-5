@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class CircleTest {
     @Test
-    public void shouldAreaCircle() {
+    public void mustCalculateArea() {
         //given
         Shape circle = new Circle(4.0);
 
@@ -16,7 +16,7 @@ public class CircleTest {
         Assertions.assertEquals(50.27, result);
     }
     @Test
-    public void shouldPerimeterCircle() {
+    public void mustCalculatePerimeter() {
         //given
         Shape circle = new Circle(4.0);
 

@@ -1,12 +1,9 @@
 package org.example;
 
 public class Triangle implements Shape{
-    double cathetus1;
-    double cathetus2;
-    double hypotenuse;
-
-    public Triangle() {
-    }
+    private double cathetus1;
+    private double cathetus2;
+    private double hypotenuse;
 
     public Triangle(double cathetus1, double cathetus2, double hypotenuse) {
         this.cathetus1 = cathetus1;
@@ -16,9 +13,9 @@ public class Triangle implements Shape{
 
     @Override
     public double getArea() {
-        double p = (cathetus1 + cathetus2 + hypotenuse) / 2;
-        double s = Math.sqrt(p * (p - cathetus1) * (p - cathetus2) * (p - hypotenuse));
-        double roundedS = Math.round(s * 100.0) / 100.0;
+        double perimeter = (cathetus1 + cathetus2 + hypotenuse) / 2;
+        double area = Math.sqrt(perimeter * (perimeter - cathetus1) * (perimeter - cathetus2) * (perimeter - hypotenuse));
+        double roundedS = Math.round(area * 100.0) / 100.0;
         return roundedS;
     }
 

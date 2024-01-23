@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class TriangleTest {
     @Test
-    public void shouldAreaTriangle() {
+    public void mustCalculateArea() {
         //given
         Shape triangle = new Triangle(3.0, 5.0, 7.0);
 
@@ -16,7 +16,7 @@ public class TriangleTest {
         Assertions.assertEquals(6.5, result);
     }
     @Test
-    public void shouldPerimeterTriangle() {
+    public void mustCalculatePerimeter() {
         //given
         Shape triangle = new Triangle(3.0, 5.0, 7.0);
 
