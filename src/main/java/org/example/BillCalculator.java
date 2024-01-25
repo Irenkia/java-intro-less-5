@@ -1,83 +1,23 @@
 package org.example;
 
 public class BillCalculator {
-    private  double bill;
-    private  float payOfServices;
-    private double discount;
-    private short packagingFee;
-
-    public BillCalculator() {
+    public static double calculateBill(double bill, float payOfServices){
+        return roundResult(bill + payServices(bill, payOfServices));
     }
 
-    public BillCalculator(double bill) {
-        this.bill = bill;
+    public static double calculateBill(double bill, float payOfServices, double discount){
+        return roundResult((bill - calculateDiscount(bill, discount)) + payServices(bill, payOfServices));
+    }
+    public static double calculateBill(double bill, float payOfServices, short packagingFee){
+        return roundResult(bill + payServices(bill, payOfServices) + (double)packagingFee);
     }
 
-    public BillCalculator(double bill, float payOfServices, double discount, short packagingFee) {
-        this.bill = bill;
-        this.payOfServices = payOfServices;
-        this.discount = discount;
-        this.packagingFee = packagingFee;
-    }
-
-    public double getBill() {
-        return bill;
-    }
-
-    public void setBill(double bill) {
-        this.bill = bill;
-    }
-
-    public float getPayOfServices() {
-        return payOfServices;
-    }
-
-    public void setPayOfServices(float payOfServices) {
-        this.payOfServices = payOfServices;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public short getPackagingFee() {
-        return packagingFee;
-    }
-
-    public void setPackagingFee(short packagingFee) {
-        this.packagingFee = packagingFee;
-    }
-
-    public double calculateBill(double bill, float payOfServices){
-        double resultPayOfServices = payServices(bill, payOfServices);
-        double resultCalculate = bill + resultPayOfServices;
-        double roundedResult = roundResult(resultCalculate);
-        return roundedResult;
-    }
-
-    public double calculateBill(double bill, float payOfServices, double discount){
-        double resultPayOfServices = payServices(bill, payOfServices);
-        double resultDiscount = (discount / 100) * bill;
-        double resultCalculate = (bill - resultDiscount) + resultPayOfServices;
-        double roundedResult = roundResult(resultCalculate);
-        return roundedResult;
-    }
-    public double calculateBill(double bill, float payOfServices, short packagingFee){
-        double resultPayOfServices = payServices(bill, payOfServices);
-        double resultCalculate = bill + resultPayOfServices + (double)packagingFee;
-        double roundedResult = roundResult(resultCalculate);
-        return roundedResult;
-    }
-
-    public double payServices(double bill, float payOfServices){
+    private static double payServices(double bill, float payOfServices){
         return (payOfServices / 100) * bill;
     }
 
-    public  double roundResult(double result){
+    private static double calculateDiscount(double bill, double discount){return (discount / 100) * bill;}
+    private static double roundResult(double result){
         return Math.round(result * 100.0) / 100.0;
     }
 }
